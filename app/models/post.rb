@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   private
 
   def update_posts_counter
-    user = User.find(self.author_id)
+    user = User.find(author_id)
     user.increment(:posts_counter)
     user.save
   end
