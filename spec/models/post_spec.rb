@@ -28,7 +28,7 @@ RSpec.describe Post, type: :model do
     expect(@post).to be_valid
   end
 
-  it 'should have likes_counter numericaly' do
+  it 'should have likes_counter numerically' do
     @post.likes_counter = 'one'
     expect(@post).to_not be_valid
 

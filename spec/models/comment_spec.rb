@@ -9,6 +9,7 @@ RSpec.describe Comment, type: :model do
   it 'should return comments_counter increments after saving the post' do
     expect(@post.comments_counter).to eq(0)
     Comment.create(author_id: @user.id, post_id: @post.id)
-    expect(@post.comments_counter).to eq(0)
+    @post.reload
+    expect(@post.comments_counter).to eq(1)
   end
 end

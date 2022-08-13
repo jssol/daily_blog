@@ -9,6 +9,7 @@ RSpec.describe Like, type: :model do
   it 'should return likes_counter increments after saving the post' do
     expect(@post.likes_counter).to eq(0)
     Like.create(author_id: @user.id, post_id: @post.id)
-    expect(@post.likes_counter).to eq(0)
+    @post.reload
+    expect(@post.likes_counter).to eq(1)
   end
 end
