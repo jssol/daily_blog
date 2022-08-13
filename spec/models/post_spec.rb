@@ -58,7 +58,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'should return less than 5 comments ' do
-    value = Post.latest_comments(@post).length
+    value = @post.latest_comments.length
     expect(value).to be < 5
   end
 end
