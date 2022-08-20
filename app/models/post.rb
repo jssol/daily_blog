@@ -16,8 +16,6 @@ class Post < ApplicationRecord
   private
 
   def update_posts_counter
-    user = User.find(author_id)
-    user.increment(:posts_counter)
-    user.save
+    User.increment_counter(:posts_counter, author_id)
   end
 end
