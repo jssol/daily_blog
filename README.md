@@ -69,4 +69,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [AGPL-3.0](./LICENSE) licensed.
-
