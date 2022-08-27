@@ -29,6 +29,10 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    Comment.find(params[:id]).delete
+  end
+
   private
 
   def post_params
