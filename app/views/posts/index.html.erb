@@ -26,6 +26,9 @@
         <% end %>
       </ul>
       <%= link_to "See Post", user_post_path(user_id: params[:user_id], id: post.id), class: 'bg-blue-500 rounded-sm self-center text-white p-1' %>
+      <% if can? :manage, post %>
+        <%= link_to "Delete", user_post_path(user_id: params[:user_id], id: post.id), method: "delete", { confirm: "Are you sure?", disable_with: "Processing...", class: "bg-red-600 text-white font-bold rounded-sm" } %>
+      <% end %>
     </li>
   <% end %>
 </ul>
