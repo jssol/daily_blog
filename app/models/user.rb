@@ -13,4 +13,12 @@ class User < ApplicationRecord
   def latest_posts
     Post.where(author_id: id).order(created_at: :desc).limit(3)
   end
+
+  # User::Roles
+  # The available roles
+  ROLES = %i[admin normal].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end
