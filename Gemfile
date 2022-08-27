@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# Add devise for authentication
+gem 'devise'
+
 # Add rubocop for linting
 gem 'rubocop', '>= 1.0', '< 2.0'
 
