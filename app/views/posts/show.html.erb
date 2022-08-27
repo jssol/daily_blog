@@ -23,11 +23,11 @@
 <li class="border-2 p-2">
   <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
   <% if can? :manage, comment %>
-    <%= link_to "Delete", user_comment_path(user_id: params[:user_id], id: comment.id), method: "delete", class: "bg-red-600 text-white font-bold rounded-sm" } %>
+    <%= link_to "Delete", user_comment_path(user_id: params[:user_id], id: comment.id), method: "delete", class: "bg-red-600 text-white font-bold rounded-sm" %>
   <% end %>
 </li>
 <% end %>
 </ul>
 <% if can? :manage, @post %>
-  <%= link_to "Delete", user_post_path(user_id: params[:user_id], id: post.id), method: "delete", { confirm: "Are you sure?", disable_with: "Processing...", class: "bg-red-600 text-white font-bold rounded-sm" } %>
+  <%= link_to "Delete", user_post_path(user_id: params[:user_id], id: @post.id), method: "delete", class: "bg-red-500 text-white p-2" %>
 <% end %>
