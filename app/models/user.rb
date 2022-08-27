@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # User::Roles
   # The available roles
-  Roles = %i[admin normal].freeze
+  ROLES = %i[admin normal].freeze
 
   def is?(requested_role)
     role == requested_role.to_s
